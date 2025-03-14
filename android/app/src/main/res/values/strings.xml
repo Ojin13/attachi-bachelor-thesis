@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Attachi</string>
+    <string name="title_activity_main">Attachi</string>
+    <string name="package_name">cz.ojin.app</string>
+    <string name="custom_url_scheme">cz.ojin.app</string>
+</resources>

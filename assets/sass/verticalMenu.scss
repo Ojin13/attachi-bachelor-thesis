@@ -1,0 +1,60 @@
+.verticalMenu{
+    background-color: $secondary-background-color;
+    border-radius: $default-border-radius;
+    width: 100%;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+
+    &__tab{
+        border-bottom: 1px solid $secondary-text-color;
+        padding: 8px;
+        display: flex;
+
+        &:first-child{
+            padding-top: 0px;
+        }
+
+        &:last-child{
+            border-bottom: none;
+            padding-bottom: 0px;
+        }
+
+        &--icon{
+            img{
+                width: 15px;
+                height: 15px;
+                margin-right: 15px;
+                position: relative;
+                top: 3px;
+            }
+
+            &--coffee{
+                img{
+                    width: 17px;
+                    height: 17px;
+                    top: 2px;
+                }
+            }
+        }
+
+        &--arrow{
+            margin-left: auto;
+            transform: rotate(180deg);
+            position: relative;
+            top: 2px;
+
+            img{
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        p{
+            margin: 0px;
+            position: relative;
+            top: 2px;
+        }
+    }
+
+}

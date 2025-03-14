@@ -1,0 +1,8 @@
+{
+  "id": "attachi",
+  "name": "attachi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}

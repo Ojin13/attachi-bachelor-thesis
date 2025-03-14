@@ -1,0 +1,121 @@
+id,question_id,answer
+1,7,Male
+2,7,Female
+3,7,Non-binary
+5,7,Other
+6,8,Heterosexual
+7,8,Bisexual
+10,8,Pansexual
+11,8,Homosexual
+12,8,Asexual
+13,8,Other
+14,30,INTJ
+15,30,INTP
+16,30,ENTJ
+17,30,ENTP
+18,30,INFJ
+19,30,INFP
+20,30,ENFJ
+21,30,ENFP
+22,30,ISTJ
+23,30,ISFJ
+24,30,ESTJ
+25,30,ESFJ
+26,30,ISTP
+27,30,ISFP
+28,30,ESTP
+29,30,ESFP
+30,31,Fire
+31,31,Air
+32,31,Earth
+33,31,Water
+34,26,Right hand
+35,26,Left hand
+36,26,Ambidextrous (both hands are dominant)
+37,32,Capricorn
+38,32,Aquarius
+39,32,Pisces
+40,32,Aries
+41,32,Taurus
+42,32,Gemini
+43,32,Cancer
+44,32,Leo
+45,32,Virgo
+46,32,Libra
+47,32,Scorpio
+48,32,Sagittarius
+49,34,Dragon
+50,34,Snake
+51,34,Horse
+52,34,Goat
+53,34,Monkey
+54,34,Rooster
+55,34,Dog
+56,34,Pig
+57,34,Rat
+58,34,Ox
+59,34,Tiger
+60,34,Rabbit
+4,7,Transgender
+61,33,The Perfectionist (1)
+62,33,The Giver (2)
+63,33,The Achiever (3)
+64,33,The Individualist (4)
+65,33,The Investigator (5)
+66,33,The Skeptic (6)
+67,33,The Enthusiast (7)
+68,33,The Challenger (8)
+69,33,The Peacemaker (9)
+70,55,Perfect
+71,55,Good
+72,55,Normal
+73,55,Bad
+74,55,Horrible
+75,56,Perfect
+76,56,Good
+77,56,Normal
+78,56,Bad
+79,56,Horrible
+80,59,Billionaires
+81,59,Millionaires
+82,59,Rich
+83,59,Average
+84,59,Poor
+85,59,Borderline poverty
+86,63,Loves it
+87,63,Is happy with it
+88,63,Does not hate it
+89,63,Is not happy with it
+90,63,Hates it
+91,69,Extremly lazy
+92,69,Easily distracted
+93,69,Average
+94,69,Hard worker
+95,69,Workaholic
+96,75,Become wealthy/rich
+97,75,Become famous
+98,75,To be loved
+99,75,To be useful
+100,77,Extremly motivated
+101,77,Very motivated
+102,77,Average motivation
+103,77,Not motivated
+104,77,Burnout
+105,86,Happily married
+106,86,"Not in love anymore, but happy"
+107,86,Failing marrige
+108,93,Excellent cook
+109,93,Skilled cook
+110,93,Average cook
+111,93,Poor cook
+112,93,Can't cook at all
+113,99,Generation Alpha (2013 - 2025)
+114,99,Generation Z (1997 - 2012)
+115,99,Millennials (1981 - 1996)
+116,99,Generation X (1965 - 1980)
+117,99,Baby Boomer Generation (1946 - 1964)
+118,99,The Silent Generation (1928 - 1945)
+119,99,The Greatest Generation (1900-1927)
+120,99,Yet to be named generation
+121,99,Generation before 1883
+122,99,Lost Generation (1883 - 1900)

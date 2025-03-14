@@ -1,0 +1,80 @@
+.scrapingResults{
+    &__item{
+        width: 100%;
+        background-color: $secondary-action-color;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        outline: 1px solid $secondary-background-color;
+        border-radius: $default-border-radius;
+        padding: 10px 20px;
+        margin-top: 20px;
+        padding-left: 40px;
+        position: relative;
+
+        &--flex{
+            display: flex;
+            padding-left: 10px;
+        }
+
+        &--headline{
+            margin-bottom: 5px;
+        }
+
+        &--image{
+            flex-shrink: 0;
+            margin-right: 10px;
+            border-right: 1px solid $placeholder-action-color;
+            padding-right: 5px;
+            $previewImageSize: 75px;
+
+            &--wrapper{
+                background-color: #e8e7d1;
+                border-radius: $default-border-radius;
+                width: $previewImageSize;
+                height: $previewImageSize;
+            }
+
+            img{
+                width: $previewImageSize;
+                height: $previewImageSize;
+                object-fit: cover;
+                border-radius: $default-border-radius;
+            }
+        }
+
+        &--webContent{
+            min-width: 0;
+            white-space: break-spaces;
+        }
+
+        &--buttons{
+            p{
+                display: flex;
+                align-items: center;
+                margin-top: 10px;
+                margin-bottom: 0px;
+                color: $primary-action-color;
+                cursor: pointer;
+            }
+
+            img{
+                width: 20px;
+                margin-right: 8px;
+            }
+        }
+
+        &--source{
+            color: $focus-text-color;
+            margin-top: 15px;
+            margin-bottom: 0px;
+            display: flex;
+            align-items: center;
+            border-top: 1px solid $placeholder-action-color;
+            padding-top: 5px;
+
+            img{
+                width: 18px;
+                margin-right: 5px;
+            }
+        }
+    }
+}

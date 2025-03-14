@@ -1,0 +1,18 @@
+@keyframes loading {
+    to {
+        background-position-x: -20%;
+    }
+}
+
+.placeholder-loading{
+    background-color: $placeholder-action-color;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 40%,
+        rgba(255, 255, 255, .5) 50%,
+        rgba(255, 255, 255, 0) 60%
+    ) $placeholder-action-color;
+    background-size: 200% 100%;
+    background-position-x: 180%;
+    animation: 1s loading ease-in-out infinite;
+}

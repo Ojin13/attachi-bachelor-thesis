@@ -1,0 +1,48 @@
+*{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+label{
+    margin: 0px!important;
+}
+
+
+ion-modal{
+    --ion-backdrop-opacity: 0.6;
+}
+
+
+
+ion-toolbar{
+    padding-top: 45px!important;
+}
+
+:root {
+	--ion-background-color: #fffff9;
+}
+
+.notConfirmed{
+    --color: rgb(208, 208, 208)!important;
+}
+
+// Hide bottom tabs on loading overlay
+body:has(.loadingIndicator--active) .mainMenu {
+    display: none;
+}
+
+// Hide quick action button when confirmation tab is active
+body:has(.confirmTab__content--active) .quickActionButton {
+    bottom: -50px;
+    opacity: 0;
+}
+
+
+
+.progressContainer{
+    &__header{
+        margin-bottom: 8px;
+    }
+}

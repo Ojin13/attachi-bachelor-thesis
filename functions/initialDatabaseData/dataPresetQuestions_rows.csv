@@ -1,0 +1,113 @@
+id,question_text,data_type,parent_question_id
+1,Birth date,date,0
+2,Age,number,0
+3,Birth place,text,0
+5,Is in relationship,bool,0
+6,In relationship with,text,5
+7,Gender,select,0
+8,Sexual orientation,select,0
+9,Eye color,text,0
+10,Height,text,0
+11,Weight,text,0
+12,Is studying,bool,0
+13,Elementary school,text,0
+14,High school,text,0
+15,University,text,0
+18,Is employed,bool,0
+20,Current position,text,18
+21,Salary,text,0
+22,Fathers name,text,0
+23,Mothers name,text,0
+24,Has siblings,bool,0
+25,Number of siblings,number,24
+26,Dominant hand,select,0
+27,Childhood nickname,text,0
+29,IQ,number,0
+30,MBTI type,select,0
+31,Element according to zodiac sign,select,0
+32,Horoscope zodiac sign,select,0
+33,Eneagram type,select,0
+34,Chinese zodiac sign,select,0
+36,Favourite number,number,0
+37,Favourite color,text,0
+38,Mothers surname at birth,text,0
+39,Favourite band,text,0
+40,Facebook,url,0
+41,Email adress,text,0
+42,Instagram,url,0
+43,Twitter,url,0
+44,Discord,url,0
+45,Steam,url,0
+46,Current school,text,12
+47,Has tattoo,bool,0
+48,Tattoo description,text,47
+49,Foot size,text,0
+50,Natural hair color,text,0
+51,Finger circumference,text,0
+52,Father is alive,bool,0
+53,Mother is alive,bool,0
+54,Is adopted,bool,0
+55,Relationship with mother,select,0
+56,Relationship with father,select,0
+57,Fathers job,text,0
+58,Mothers job,text,0
+59,Family financial situation,select,0
+60,Grandma alive,bool,0
+61,Grandpa alive,bool,0
+63,Is happy with current job,select,0
+17,Year of graduation,text,16
+16,Has graduated,bool,0
+64,Nationality,text,0
+65,EQ (Emotional intelligence),number,0
+67,Death date,date,66
+68,Speaks languages,text,0
+69,Level of productivity,select,0
+72,Wants children?,bool,0
+73,Wants to get married?,bool,0
+77,Level of motivation,select,0
+78,"Greatest fear ",text,0
+79,Everyday fears,text,0
+80,Has PTSD or trauma?,bool,0
+81,Cause of PTSD / trauma,text,80
+82,Is engaged,bool,0
+83,Engaged with,text,82
+84,Is married,bool,0
+85,Married with,text,84
+86,State of marrige,select,0
+87,Date of wedding,date,84
+88,Is divorced,bool,0
+89,Divorced with,text,88
+92,Can drive,bool,0
+93,Level of cooking skills,select,0
+95,Academic title,text,0
+96,Field of study / expertise,text,0
+98,Ex-boyfriends / Ex-girlfriends,text,0
+66,Is alive,bool_reverse,0
+4,Address,text,0
+19,Current company,text,18
+28,Nickname,text,0
+35,Pet names,text,0
+62,Industry,text,0
+70,Life mission,text,0
+71,Life goals,text,0
+74,Has a plan to achieve goals?,bool,0
+75,Core motivation,select,0
+76,Basic everyday motivators,text,0
+90,Musical instruments,text,0
+91,Favourite sports,text,0
+94,Considerable skills and abilities,text,0
+97,Phone number,text,0
+99,Generation name,select,0
+100,LinkedIn,url,0
+101,Previous working experiences,text,0
+102,Other education,text,0
+103,Certifications,text,0
+104,General interests,text,0
+105,Reddit,url,0
+106,Wikipedia page,url,0
+107,YouTube channel,url,0
+108,Personal website,url,0
+110,Pinterest,url,0
+111,TikTok,url,0
+112,Snapchat,url,0
+113,Quora,url,0

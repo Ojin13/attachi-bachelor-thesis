@@ -1,0 +1,208 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["multiSchema"]
+  binaryTargets   = ["native"]
+}
+
+datasource db {
+  provider = "postgresql"
+  schemas = ["private"]
+  url      = env("DATABASE_URL")
+}
+
+model feedback {
+  id               Int    @id @default(autoincrement())
+  created_at       DateTime? @default(now()) @db.Timestamptz(6)
+  user_uid         String
+  feedback_content String
+
+  @@schema("private")
+}
+
+model contactGroupMembers {
+  link_id       Int           @id @default(autoincrement())
+  group_id      Int
+  contact_id    Int
+  user_uid      String        @db.VarChar
+  contacts      contacts      @relation(fields: [contact_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  contactGroups contactGroups @relation(fields: [group_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  users         users         @relation(fields: [user_uid], references: [uid], onDelete: NoAction, onUpdate: NoAction)
+
+  @@schema("private")
+}
+
+model contactGroups {
+  id                  Int                   @id(map: "groups_pkey") @default(autoincrement())
+  name                String                @db.VarChar(255)
+  description         String
+  user_uid            String
+  contactGroupMembers contactGroupMembers[]
+  users               users                 @relation(fields: [user_uid], references: [uid], onDelete: Cascade, onUpdate: NoAction)
+
+  @@schema("private")
+}
+
+model contactMedia {
+  id         Int      @id @default(autoincrement())
+  contact_id Int
+  media_name String
+  user_uid   String
+  contacts   contacts @relation(fields: [contact_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  users      users    @relation(fields: [user_uid], references: [uid], onDelete: NoAction, onUpdate: NoAction)
+
+  @@schema("private")
+}
+
+model contactNotes {
+  id                     Int      @id @default(autoincrement())
+  contact_id             Int
+  note                   String
+  last_modification_date String
+  user_uid               String
+  contacts               contacts @relation(fields: [contact_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  users                  users    @relation(fields: [user_uid], references: [uid], onDelete: NoAction, onUpdate: NoAction)
+
+  @@schema("private")
+}
+
+model contacts {
+  id                  Int                   @id @default(autoincrement())
+  name                String
+  description         String
+  user_uid            String                @db.VarChar(255)
+  contactGroupMembers contactGroupMembers[]
+  contactMedia        contactMedia[]
+  contactNotes        contactNotes[]
+  users               users                 @relation(fields: [user_uid], references: [uid], onDelete: NoAction, onUpdate: NoAction)
+  dataPresetAnswers   dataPresetAnswers[]
+
+  @@schema("private")
+}
+
+model dataPresetAnswers {
+  id                  Int                 @id @default(autoincrement())
+  contact_id          Int
+  question_id         Int
+  question_answer     String
+  user_uid            String              @db.VarChar(255)
+  contacts            contacts            @relation(fields: [contact_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  dataPresetQuestions dataPresetQuestions @relation(fields: [question_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  users               users               @relation(fields: [user_uid], references: [uid], onDelete: NoAction, onUpdate: NoAction)
+
+  @@schema("private")
+}
+
+model dataPresetDependencies {
+  id                                         Int                 @id @default(autoincrement())
+  question_id                                Int
+  dependent_question_id                      Int
+  dataPresetQuestionsDependentParentQuestion dataPresetQuestions @relation("dataPresetQuestionsDependentParentQuestion", fields: [dependent_question_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  dataPresetQuestions                        dataPresetQuestions @relation(fields: [question_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@schema("private")
+}
+
+model dataPresetQuestionLinks {
+  link_id             Int                 @id @default(autoincrement())
+  question_id         Int
+  data_preset_id      Int
+  dataPresets         dataPresets         @relation(fields: [data_preset_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  dataPresetQuestions dataPresetQuestions @relation(fields: [question_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@schema("private")
+}
+
+model dataPresetQuestions {
+  id                                     Int                         @id
+  question_text                          String                      @db.VarChar(255)
+  data_type                              String                      @db.VarChar(255)
+  parent_question_id                     Int
+  dataPresetAnswers                      dataPresetAnswers[]
+  dataPresetDependenciesParentQuestionId dataPresetDependencies[]    @relation("dataPresetQuestionsDependentParentQuestion")
+  dataPresetDependencies                 dataPresetDependencies[]
+  dataPresetQuestionLinks                dataPresetQuestionLinks[]
+  dataPresetsPremadeAnswers              dataPresetsPremadeAnswers[]
+
+  @@schema("private")
+}
+
+model dataPresets {
+  id                      Int                       @id
+  name                    String                    @db.VarChar(255)
+  description             String                    @db.VarChar(255)
+  dataPresetQuestionLinks dataPresetQuestionLinks[]
+
+  @@schema("private")
+}
+
+model dataPresetsPremadeAnswers {
+  id                  Int                 @id @default(autoincrement())
+  question_id         Int
+  answer              String              @db.VarChar(255)
+  dataPresetQuestions dataPresetQuestions @relation(fields: [question_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@schema("private")
+}
+
+model users {
+  uid                          String                @id @db.VarChar(255)
+  name                         String                @db.VarChar(255)
+  encryption_key               String
+  encryption_key_recovery_code String?               @default("")
+  email                        String?               @unique
+  registration_date            DateTime?             @default(now()) @db.Date
+  last_login_date              DateTime?             @default(now()) @db.Date
+  contactGroupMembers          contactGroupMembers[]
+  contactGroups                contactGroups[]
+  contactMedia                 contactMedia[]
+  contactNotes                 contactNotes[]
+  contacts                     contacts[]
+  dataPresetAnswers            dataPresetAnswers[]
+  readNotifications            readNotifications[]
+  userCredits                  userCredits?
+
+  @@schema("private")
+}
+
+model notifications {
+  id                 Int   @id @default(autoincrement())
+  created_at         DateTime @default(now()) @db.Date
+  heading            String?  @default("")
+  content            String?  @default("")
+  external_link      String?  @default("")
+  image_url          String?  @default("")
+  content_preview    String?  @default("")
+  external_link_text String?  @default("")
+
+  @@schema("private")
+}
+
+model readNotifications {
+  id               Int  @id @default(autoincrement())
+  user_uid         String  @db.VarChar
+  notification_ids String?
+  users            users   @relation(fields: [user_uid], references: [uid], onDelete: Cascade, onUpdate: NoAction)
+
+  @@schema("private")
+}
+
+model updateNews {
+  id                 Int  @id @default(autoincrement())
+  version_code       String? @default("")
+  update_summary     String? @default("")
+  update_description String? @default("")
+  build_number       String? @default("")
+
+  @@schema("private")
+}
+
+
+model userCredits {
+  id                  Int  @id @default(autoincrement())
+  credit_amount       Int @default(0)
+  next_auto_recharge  String @default("")
+  user_uid            String @default("")   @unique
+  users               users         @relation(fields: [user_uid], references: [uid], onDelete: NoAction, onUpdate: NoAction)
+
+  @@schema("private")
+}

@@ -1,0 +1,21 @@
+.errorMessage{
+    &__form{
+
+        &--center{
+            text-align: center;
+        }
+
+        &--text{
+            color: $error-color-dark;
+            margin-bottom: 0px;
+
+            &::before{
+                content: "⚠️";
+                margin-right: 5px;
+                font-size: 18px;
+                position: relative;
+                top: 2px;
+            }
+        }
+    }
+}

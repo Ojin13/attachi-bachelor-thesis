@@ -1,0 +1,47 @@
+.screenContainer{
+    // This is needed to prevent bottom mobile menu jumping
+    overflow: hidden;
+    background-color: $primary-background-color;
+    position: relative;
+
+    @media (min-width: 768px){
+        margin: auto;
+        width: 768px;
+    }
+
+    &--full{
+        min-height: 100vh;
+    }
+}
+
+.pageContainer{
+    padding: 15px;
+
+    &--noTop{
+        padding-top: 0px;
+    }
+
+    &--shake{
+        animation: shake-screen 0.5s;
+    }
+}
+
+@keyframes shake-screen {
+    0% { transform: translate(0px, 0px) }
+    10% { transform: translate(-3px, 0px) }
+    20% { transform: translate(3px, 0px) }
+    30% { transform: translate(-3px, 0px) }
+    40% { transform: translate(3px, 0px) }
+    50% { transform: translate(-3px, 0px) }
+    60% { transform: translate(3px, 0px) }
+    70% { transform: translate(-3px, 0px) }
+    80% { transform: translate(3px, 0px) }
+    90% { transform: translate(-3px, 0px) }
+    100% { transform: translate(0px, 0px) }
+}
+
+
+.noScroll{
+    overflow: hidden;
+    height: 100vh;
+}

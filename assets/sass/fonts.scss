@@ -1,0 +1,96 @@
+// Declare own font families
+
+@font-face {
+    font-family: 'InterBold';
+    src: url('../fonts/Inter/static/Inter-SemiBold.ttf') format('truetype');
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'InterRegular';
+    src: url('../fonts/Inter/static/Inter-Medium.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CourierPrime';
+    src: url('../fonts/CourierPrime/CourierPrime-Bold.ttf') format('truetype');
+    font-style: normal;
+}
+
+
+*{
+    font-family: 'InterRegular';
+}
+
+
+h1{
+    font-family: 'InterBold';
+    font-size: $large-font-size;
+    color: $primary-text-color;
+}
+
+
+h2{
+    font-family: 'InterBold';
+    font-size: $default-font-size;
+    color: $primary-text-color;
+}
+
+
+p{
+    font-family: 'InterRegular';
+    font-size: $default-font-size;
+    color: $primary-text-color;
+    margin-top: 2px;
+}
+
+.bold{
+    font-family: 'InterBold';
+}
+
+.gray{
+    color: $secondary-text-color;
+}
+.gray2{
+    color: $focus-text-color;
+
+}
+.large2{
+    font-size: $default-font-size-bigger;
+}
+
+.large{
+    font-size: $large-font-size;
+}
+
+.medium2{
+    font-size: $mid-font-size;
+}
+
+.medium{
+    font-size: $medium-font-size;
+}
+
+
+.small{
+    font-size: $small-font-size;
+}
+
+.mini{
+    font-size: $mini-font-size;
+}
+
+a{
+    text-decoration: none!important;
+    color: $primary-action-color;
+    --ion-color-primary: #90bf74;
+
+    &:active{
+        color: $primary-action-color;
+    }
+
+    &:hover{
+        color: $primary-action-color;
+    }
+}
